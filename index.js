@@ -3,6 +3,7 @@ const app = express();
 const PORT = 5000;
 const path = require("path");
 const db = require("./config/mongoose");
+const User = require("./models/userModel");
 const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 
