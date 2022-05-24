@@ -26,5 +26,17 @@ const register = (req, res) => {
   });
 };
 
+const allUsers = (req, res) => {
+  User.find({}, (err, data) => {
+    console.log(data);
+    if (err) {
+      console.log("error in fetching");
+      return res.redirect("/");
+    }
+    return res.render("users", { data });
+  });
+};
+
 module.exports.signupPage = signupPage;
 module.exports.register = register;
+module.exports.allUsers = allUsers;
